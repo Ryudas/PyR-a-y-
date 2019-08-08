@@ -1,3 +1,3 @@
-# PyR̷a̷y̷
+# Py~~Ray~~
 
-Simple Raytracer for python
+Simple Raytracer written in python 3
