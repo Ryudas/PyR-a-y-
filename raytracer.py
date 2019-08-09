@@ -32,6 +32,8 @@ pg.init()
 
 # Initialize the screen for display
 screen = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption("PyR̶A̶Y̶")
+pg.display.set_icon(pg.image.load("icon2.png")) 
 
 # Clock for limiting framerate of window
 clock = pg.time.Clock()
@@ -39,40 +41,43 @@ clock = pg.time.Clock()
 
 # Create a surface with the size as the array 
 surf = pg.Surface((WIDTH, HEIGHT))
+ 
+ # copy values from pixel array onto the surface 
+#pg.surfarray.blit_array(surf, pixel_array) 
 
- # draw the array onto the surface 
-pg.surfarray.blit_array(surf, pixel_array)
-# transform the surface to screen size
-surf = pg.transform.scale(surf, (WIDTH, HEIGHT)) 
+# Scale the surface to thescreen size
+surf = pg.transform.scale(surf, (SCREEN_WIDTH, SCREEN_HEIGHT)) 
 
 # game loop
 running, i = True, -1
-print(pixel_array.shape[0] ) 
-print(pixel_array.shape[1] )
+print(WIDTH) 
+print(HEIGHT)
  
 while running: 
-    #clock.tick(3000)
-    if(i < HEIGHT-1):
-        i +=1
+    # maximum 90 FPS
+    clock.tick(90)
+    
+    if(i < HEIGHT-1): 
+        i += 1
     else:
-        i =0 
+        i = 0  
     print(i) 
  
-
+    # Process quit event, if queried
     for event in pg.event.get():  
         if event.type == pg.QUIT:
             running = False
 
     # for all         
-    for k in range(pixel_array.shape[0]):
-        pixel_array[k][i] = color_dict[random.randrange(3)]
+    #for k in range(pixel_array.shape[0]):
+     #   pixel_array[k][i] = color_dict[random.randrange(3)]
 
     # update screen with pixel array        
-    pg.surfarray.blit_array(surf, pixel_array)    
+    #pg.surfarray.blit_array(surf, pixel_array)    
     screen.fill((0, 0, 0))
 
     # blit the transformed surface onto the screen
-     # draw the array onto the surface 
+     # draw the array onto the surface  
 
     screen.blit(surf, (0, 0)) 
 
