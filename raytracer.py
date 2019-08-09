@@ -1,4 +1,4 @@
-import pygame as pg  
+import pygame as pg   
 import numpy as np
 import random
 
@@ -26,7 +26,6 @@ for i in range(HEIGHT):
         pixel_array[i][j] = color_dict[random.randrange(3)]
 
 
-
 # Initialize pygame
 pg.init()
 
@@ -40,14 +39,13 @@ clock = pg.time.Clock()
 
 
 # Create a surface with the size as the array 
-surf = pg.Surface((WIDTH, HEIGHT))
+surf = pg.Surface((HEIGHT, WIDTH))
  
- # copy values from pixel array onto the surface 
-#pg.surfarray.blit_array(surf, pixel_array) 
+# copy values from pixel array onto the surface   
+pg.surfarray.blit_array(surf, pixel_array)  
 
 # Scale the surface to thescreen size
-surf = pg.transform.scale(surf, (SCREEN_WIDTH, SCREEN_HEIGHT)) 
-
+surf = pg.transform.scale(surf, (SCREEN_WIDTH, SCREEN_HEIGHT))
 # game loop
 running, i = True, -1
 print(WIDTH) 
@@ -57,7 +55,7 @@ while running:
     # maximum 90 FPS
     clock.tick(90)
     
-    if(i < HEIGHT-1): 
+    if(i < WIDTH-1):   
         i += 1
     else:
         i = 0  
@@ -69,11 +67,11 @@ while running:
             running = False
 
     # for all         
-    #for k in range(pixel_array.shape[0]):
-     #   pixel_array[k][i] = color_dict[random.randrange(3)]
+    for k in range(HEIGHT):
+        pixel_array[k][i] = color_dict[random.randrange(3)]
 
     # update screen with pixel array        
-    #pg.surfarray.blit_array(surf, pixel_array)    
+    pg.surfarray.blit_array(surf, pixel_array)    
     screen.fill((0, 0, 0))
 
     # blit the transformed surface onto the screen
