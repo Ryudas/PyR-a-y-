@@ -1,0 +1,386 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"start_time\tbuiltins.float | float ⟠"
+			],
+			[
+				"play",
+				"play_sound\tfunction ⟠"
+			],
+			[
+				"re",
+				"ready_for_rssi\tbool ⟠"
+			],
+			[
+				"el",
+				"elif \tkeyword ⟠"
+			],
+			[
+				"get",
+				"get_rssi\tfunction ⟠"
+			],
+			[
+				"print",
+				"print(sub_str)\tfunction ⟠"
+			],
+			[
+				"inpu",
+				"input_str\t⟠"
+			],
+			[
+				"sub",
+				"sub_str"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "import pygame as pg\nimport numpy as np\nimport random\n\n# create a 3D array with 30x30x3 (the last dimension is for the RGB color)\ncells = np.ndarray((30, 30, 3))\n\n# color dictionary, represents white, red and blue\ncolor_dict = {\n        0: (255, 255, 255), \n        1: (255, 0, 0),\n        2: (0, 0, 255)\n        }\n\n# pick a random color tuple from the color dict\nfor i in range(cells.shape[0]):\n    for j in range(cells.shape[1]):\n        cells[i][j] = color_dict[random.randrange(3)]\n\n# set the size of the screen as multiples of the array\ncellsize = 20\nWIDTH = cells.shape[0] * cellsize\nHEIGHT = cells.shape[1] * cellsize\n\n# initialize pygame\npg.init()\nscreen = pg.display.set_mode((WIDTH, HEIGHT))\nclock = pg.time.Clock()\n\n#create a surface with the size as the array\nsurf = pg.Surface((cells.shape[0], cells.shape[1]))\n # draw the array onto the surface\npg.surfarray.blit_array(surf, cells)\n# transform the surface to screen size\nsurf = pg.transform.scale(surf, (WIDTH, HEIGHT))\n\n# game loop\nrunning = True\nwhile running:\n    clock.tick(60)\n\n    for event in pg.event.get():\n        if event.type == pg.QUIT:\n            running = False\n\n    screen.fill((0, 0, 0))           \n    # blit the transformed surface onto the screen\n    screen.blit(surf, (0, 0))\n\n    pg.display.update()\n\npg.quit()",
+			"file": "raytracer.py",
+			"file_size": 1296,
+			"file_write_time": 132097522920312739,
+			"settings":
+			{
+				"buffer_size": 1296,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ray.sublime-project",
+			"settings":
+			{
+				"buffer_size": 482,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Snippet: new",
+				"Snippet: New Class"
+			],
+			[
+				"pa",
+				"Package Control: Enable Package"
+			],
+			[
+				"ana",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package",
+				"Package Control: Disable Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"Package Control ",
+				"Package Control: Install Package"
+			],
+			[
+				"Pacadge Control",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"PACK",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 150.0,
+		"history":
+		[
+			"python --version",
+			"python3 --version",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/localadmin/Dropbox/Projects/PyRay"
+	],
+	"file_history":
+	[
+		"/Users/localadmin/Dropbox/Projects/PyRay/README.md",
+		"/Users/localadmin/Dropbox/Work/Sensor Shorts/ICM20649.h",
+		"/Users/localadmin/Dropbox/Work/Sensor Shorts/ICM20649-IMU-library/ICM20649.cpp",
+		"/Users/localadmin/Dropbox/Documents/ID5452B IOT2: Developing Connected Products and Se",
+		"/Users/localadmin/Dropbox/Documents/Edit module titleEdit module title",
+		"/Users/localadmin/IdeaProjects/sensor_app/.gitignore",
+		"/Users/localadmin/IdeaProjects/sensor_app/.gitignor",
+		"/Users/localadmin/IdeaProjects/sensor_app/android/.gitignore",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/to deç",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/Safe Withdrawal Rate.png",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/Quotas.md",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/Queima Car.txt",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/FRIEND68ac50890e39",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/Components list",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/client id: dcd-hub-android",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/askad.md",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/Antwoordformulier.md",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/13:30",
+		"/Users/localadmin/Documents/EA_NSGA2/TSP_data",
+		"/Users/localadmin/Documents/EA_NSGA2/mo_TSP_generator.py",
+		"/Users/localadmin/Dropbox/Documents/mkdown notes/to deç (2)",
+		"/Users/localadmin/Dropbox/to deç (2)",
+		"/Users/localadmin/Dropbox/TUDelft/Networked and Distributed Control Systems/Lab/Assignment 1/Acciaiuoli",
+		"/Users/localadmin/IdeaProjects/startup_namer/.gitignore",
+		"/Users/localadmin/Downloads/experiments/treated_data/log_p100_m1_k5_d1k_cOnePoint.txt",
+		"/Users/localadmin/Downloads/experiments/treated_data/log_p100_m1_k5_d1k_cUniform.txt",
+		"/Users/localadmin/Downloads/experiments/treated_data/log_p100_m1_k5_d1-1k_cUniform.txt",
+		"/Users/localadmin/Downloads/experiments/log_p100_m1_k5_d0.2_cOnePoint_run0.txt",
+		"/Users/localadmin/Dropbox/TUDelft/Evolutionary Algorithms/Practical 1/simpleGA_java/README.md",
+		"/Users/localadmin/Dropbox/Antwoordformulier.md",
+		"/Users/localadmin/Dropbox/to deç",
+		"/Users/localadmin/Dropbox/askad.md",
+		"/Users/localadmin/Dropbox/13:30",
+		"/Users/localadmin/Downloads/Updated R&O doc.txt",
+		"/Users/localadmin/Downloads/Software praticum grading/Group 15.md",
+		"/Users/localadmin/Dropbox/Components list",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/test scripts/Play Sound/play_wav_sound.py",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/test scripts/Video Recording/.env",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/test scripts/Video Recording/record_video.py",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/dcd_sdk/dcd-sdk-python/README.md",
+		"/Users/localadmin/Dropbox/WorkFlow/Sublime Text/cmt.sublime-snippet",
+		"/Users/localadmin/Dropbox/WorkFlow/Sublime Text/Anaconda.sublime-settings",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair-design-platform/examples/bluetooth/proximity.py",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/proximity2.py",
+		"/Users/localadmin/Dropbox/Work/IoT/wheelchair_platform_py/proximity.py",
+		"/Users/localadmin/Library/Application Support/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/Users/localadmin/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/Users/localadmin/KiteOnboarding.py",
+		"/Users/localadmin/test",
+		"/Users/localadmin/Dropbox/FRIEND68ac50890e39",
+		"/Users/localadmin/Library/Application Support/Sublime Text 3/Packages/TerminalView/README.md",
+		"/Users/localadmin/Desktop/Antwoordformulier.md",
+		"/Users/localadmin/Desktop/Projects.md",
+		"/Users/localadmin/Dropbox/Software Course",
+		"/Users/localadmin/Dropbox/WorkFlow/AppData/Documentation/Concurrent Programming.md",
+		"/Users/localadmin/Dropbox/Quotas.md",
+		"/Users/localadmin/Dropbox/WorkFlow/kap.md",
+		"/Users/localadmin/Documents/1.svg",
+		"/Users/localadmin/Dropbox/WorkFlow/Programs in MacOS.md",
+		"/Users/localadmin/Dropbox/WorkFlow/Programs in PC.md",
+		"/Users/localadmin/Downloads/DarkArduinoTheme-master/README.md",
+		"/Users/localadmin/Dropbox/Hi there!",
+		"/Users/localadmin/Documents/rough draft",
+		"/Users/localadmin/Documents/Software-Workshop-4/MyApplication/app/src/main/java/nl/Quick setup — if you’ve done this kind of thing be",
+		"/Users/localadmin/Dropbox/Work/workshop 0.md"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "raytracer.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1296,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								362,
+								362
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ray.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								482,
+								482
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ray.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 299.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
